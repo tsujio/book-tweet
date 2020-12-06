@@ -1,0 +1,7 @@
+.candidate-book {
+    cursor: pointer;
+}
+
+.candidate-book:hover {
+    background: lightgray;
+}

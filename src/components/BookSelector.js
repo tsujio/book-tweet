@@ -1,0 +1,29 @@
+import React from 'react';
+import { ListGroup } from 'react-bootstrap';
+import CandidateBook from './CandidateBook';
+import './BookSelector.css';
+
+export default class BookSelector extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    if (this.props.candidateBooks.length <= 0) {
+      return null
+    }
+    const books = this.props.candidateBooks.items.map((book, i) => {
+      return (
+        <ListGroup.Item className="candidate-books-item">
+          <CandidateBook book={book}
+                         onClick={this.props.onSelect} />
+        </ListGroup.Item>
+      )
+    })
+    return (
+      <ListGroup>
+        {books}
+      </ListGroup>
+    )
+  }
+}
