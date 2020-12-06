@@ -18,10 +18,17 @@ export default class App extends React.Component {
   }
 
   handleCandidateBooksUpdate(candidateBooks) {
-    this.setState({
-      candidateBooks: candidateBooks,
-      selectedBook: null,
-    })
+    if (!candidateBooks) {
+      this.setState({
+        candidateBooks: [],
+        selectedBook: null,
+      })
+    } else {
+      this.setState({
+        candidateBooks: candidateBooks,
+        selectedBook: null,
+      })
+    }
   }
 
   handleBookSelect(book) {
@@ -37,7 +44,7 @@ export default class App extends React.Component {
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={8}>
             <div className="header">
-              <span>Title</span>
+              <h1>本を検索してツイートするだけのページ</h1>
             </div>
           </Col>
         </Row>

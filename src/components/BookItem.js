@@ -26,7 +26,7 @@ export default class BookItem extends React.Component {
     return (
       <div className="book">
         <div className="book-img-container">
-          <img src={book.volumeInfo.imageLinks.smallThumbnail} />
+          <img src={(book.volumeInfo.imageLinks || {}).smallThumbnail} />
         </div>
         <div>
           <span className="book-title">{book.volumeInfo.title}</span>

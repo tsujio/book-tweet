@@ -2,6 +2,9 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import './TweetButton.css';
 
+const HASH_TAG = 'あいうえお'
+const SERVICE_URL = 'https://www.tsujio.org'
+
 export default class TweetButton extends React.Component {
   constructor(props) {
     super(props)
@@ -18,13 +21,14 @@ export default class TweetButton extends React.Component {
           ` ${book.volumeInfo.publisher},` +
           ` ${book.volumeInfo.publishedDate}` +
           ` ${book.volumeInfo.previewLink}` +
-          `\n#yonda https://www.tsujio.org`
+          `\n#${HASH_TAG} ${SERVICE_URL}`
     const url = `http://twitter.com/share?url=${encodeURIComponent(text)}`
 
     return (
       <Row>
         <Col>
-          <Button variant="primary"
+          <Button className="tweet-button"
+                  variant="primary"
                   href={url}
                   block
                   target="_blank">この本をツイートする</Button>

@@ -1,8 +1,16 @@
 body {
-    background: lightgray;
+    background: #ececec;
 }
 
 .header {
+    display: flex;
     height: 100px;
-    background: gray;
+    background: #007bff;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: white;
+    font-size: 170%;
 }

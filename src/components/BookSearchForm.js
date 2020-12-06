@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, InputGroup, FormControl, Button } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
+import './BookSearchForm.css';
 
 export default class BookSearchForm extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ export default class BookSearchForm extends React.Component {
     event.preventDefault()
 
     if (this.state.value.length <= 0) {
+      this.props.onCandidateBooksUpdate(null)
       return
     }
 
@@ -29,9 +31,9 @@ export default class BookSearchForm extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form className="book-search-form" onSubmit={this.handleSubmit}>
         <InputGroup className="mb-3">
-          <FormControl placeholder="本のキーワード"
+          <FormControl placeholder="本を検索します"
                        value={this.state.value}
                        onChange={this.handleChange} />
           <InputGroup.Append>
