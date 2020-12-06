@@ -15,7 +15,7 @@ export default class TweetButton extends React.Component {
 
     const book = this.props.book
     const text = `"${book.volumeInfo.title}",` +
-          ` ${book.volumeInfo.authors.join(', ')},` +
+          ` ${(book.volumeInfo.authors || []).join(', ')},` +
           ` ${book.volumeInfo.publisher},` +
           ` ${book.volumeInfo.publishedDate}` +
           ` ${book.volumeInfo.previewLink}` +

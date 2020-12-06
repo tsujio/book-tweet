@@ -16,6 +16,11 @@ export default class BookSearchForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
+
+    if (this.state.value.length <= 0) {
+      return
+    }
+
     fetch('https://www.googleapis.com/books/v1/volumes?q=' +
           encodeURIComponent(this.state.value))
       .then(response => response.json())
