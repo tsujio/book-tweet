@@ -20,7 +20,7 @@ export default class TweetButton extends React.Component {
           ` ${(book.volumeInfo.authors || []).join(', ')},` +
           ` ${book.volumeInfo.publisher},` +
           ` ${book.volumeInfo.publishedDate}` +
-          ` ${book.volumeInfo.previewLink}` +
+          ` ${book.volumeInfo.canonicalVolumeLink}` +
           `\n#${HASH_TAG} ${SERVICE_URL}`
     const url = `http://twitter.com/share?url=${encodeURIComponent(text)}`
 
