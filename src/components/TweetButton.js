@@ -2,8 +2,8 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import './TweetButton.css';
 
-const HASH_TAG = 'あいうえお'
-const SERVICE_URL = 'https://www.tsujio.org'
+const HASH_TAG = 'よむよむ会'
+const SERVICE_URL = 'https://yomuyomukai.tsujio.org'
 
 export default class TweetButton extends React.Component {
   constructor(props) {

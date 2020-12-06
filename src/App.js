@@ -44,7 +44,7 @@ export default class App extends React.Component {
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={8}>
             <div className="header">
-              <h1>本を検索してツイートするだけのページ</h1>
+              <h1>本をよむよむ会</h1>
             </div>
           </Col>
         </Row>

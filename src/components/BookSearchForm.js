@@ -33,7 +33,7 @@ export default class BookSearchForm extends React.Component {
     return (
       <Form className="book-search-form" onSubmit={this.handleSubmit}>
         <InputGroup className="mb-3">
-          <FormControl placeholder="本を検索します"
+          <FormControl placeholder="本を検索してツイートします"
                        value={this.state.value}
                        onChange={this.handleChange} />
           <InputGroup.Append>
