@@ -1,6 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { TwitterShareButton, TwitterIcon } from 'react-share';
+import { Row, Col, Button } from 'react-bootstrap';
 import './TweetButton.css';
 
 export default class TweetButton extends React.Component {
@@ -20,20 +19,15 @@ export default class TweetButton extends React.Component {
           ` ${book.volumeInfo.publishedDate}` +
           ` ${book.volumeInfo.previewLink}` +
           `\n#yonda https://www.tsujio.org`
+    const url = `http://twitter.com/share?url=${encodeURIComponent(text)}`
 
     return (
       <Row>
         <Col>
-          <TwitterShareButton url={text}>
-            <div className="tweet-button">
-              <div>
-                <TwitterIcon size={48} round={true} />
-              </div>
-              <div>
-                この本をツイートする
-              </div>
-            </div>
-          </TwitterShareButton>
+          <Button variant="primary"
+                  href={url}
+                  block
+                  target="_blank">この本をツイートする</Button>
         </Col>
       </Row>
     )

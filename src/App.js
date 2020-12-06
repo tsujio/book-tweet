@@ -34,12 +34,31 @@ export default class App extends React.Component {
   render() {
     return (
       <Container>
-        <Row>
-          <Col>
+        <Row className="justify-content-center">
+          <Col xs={12} md={10} lg={8}>
+            <div className="header">
+              <span>Title</span>
+            </div>
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col xs={12} md={10} lg={8}>
             <BookSearchForm onCandidateBooksUpdate={this.handleCandidateBooksUpdate} />
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col xs={12} md={10} lg={8}>
             <BookSelector candidateBooks={this.state.candidateBooks}
                           onSelect={this.handleBookSelect} />
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col xs={12} md={10} lg={8}>
             <SelectedBook book={this.state.selectedBook} />
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col xs={12} md={8} lg={6}>
             <TweetButton book={this.state.selectedBook} />
           </Col>
         </Row>
