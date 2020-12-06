@@ -69,6 +69,13 @@ export default class App extends React.Component {
             <TweetButton book={this.state.selectedBook} />
           </Col>
         </Row>
+        <Row className="justify-content-center">
+          <Col xs={12} md={10} lg={8}>
+            <div className="footer">
+              <span>&copy; <a href="https://www.tsujio.org">辻尾研</a></span>
+            </div>
+          </Col>
+        </Row>
       </Container>
     )
   }

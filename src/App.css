@@ -14,3 +14,9 @@ body {
     color: white;
     font-size: 170%;
 }
+
+.footer {
+    margin-top: 2rem;
+    height: 100px;
+    text-align: center;
+}
