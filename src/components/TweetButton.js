@@ -16,11 +16,11 @@ export default class TweetButton extends React.Component {
     }
 
     const book = this.props.book
-    const text = `"${book.volumeInfo.title}",` +
+    const text = `"${book.volumeInfo.title || ''}",` +
           ` ${(book.volumeInfo.authors || []).join(', ')},` +
-          ` ${book.volumeInfo.publisher},` +
-          ` ${book.volumeInfo.publishedDate}` +
-          ` ${book.volumeInfo.canonicalVolumeLink}` +
+          ` ${book.volumeInfo.publisher || ''},` +
+          ` ${book.volumeInfo.publishedDate || ''}` +
+          ` ${book.volumeInfo.canonicalVolumeLink || ''}` +
           `\n#${HASH_TAG} ${SERVICE_URL}`
     const url = `http://twitter.com/share?url=${encodeURIComponent(text)}`
 
