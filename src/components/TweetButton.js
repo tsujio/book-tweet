@@ -1,9 +1,7 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import { getTweetText } from '../lib/tweet';
 import './TweetButton.css';
-
-const HASH_TAG = 'よむよむ会'
-const SERVICE_URL = 'https://yomuyomukai.tsujio.org'
 
 export default class TweetButton extends React.Component {
   constructor(props) {
@@ -15,13 +13,7 @@ export default class TweetButton extends React.Component {
       return null
     }
 
-    const book = this.props.book
-    const text = `"${book.volumeInfo.title || ''}",` +
-          ` ${(book.volumeInfo.authors || []).join(', ')},` +
-          ` ${book.volumeInfo.publisher || ''},` +
-          ` ${book.volumeInfo.publishedDate || ''}` +
-          ` ${book.volumeInfo.canonicalVolumeLink || ''}` +
-          `\n#${HASH_TAG} ${SERVICE_URL}`
+    const text = getTweetText(this.props.book)
     const url = `http://twitter.com/share?url=${encodeURIComponent(text)}`
 
     return (

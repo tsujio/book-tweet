@@ -4,6 +4,7 @@ import BookSearchForm from './components/BookSearchForm';
 import BookSelector from './components/BookSelector';
 import SelectedBook from './components/SelectedBook';
 import TweetButton from './components/TweetButton';
+import TweetTextCopyButton from './components/TweetTextCopyButton';
 import './App.css';
 
 export default class App extends React.Component {
@@ -65,8 +66,11 @@ export default class App extends React.Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col xs={12} md={8} lg={6}>
+          <Col xs={10} md={8} lg={6}>
             <TweetButton book={this.state.selectedBook} />
+          </Col>
+          <Col xs={2} md={1} lg={1}>
+            <TweetTextCopyButton book={this.state.selectedBook} />
           </Col>
         </Row>
         <Row className="justify-content-center">
