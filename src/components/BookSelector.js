@@ -4,10 +4,6 @@ import CandidateBook from './CandidateBook';
 import './BookSelector.css';
 
 export default class BookSelector extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     if (this.props.candidateBooks.length <= 0) {
       return null

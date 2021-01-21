@@ -4,10 +4,6 @@ import { getTweetText } from '../lib/tweet';
 import './TweetButton.css';
 
 export default class TweetButton extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     if (!this.props.book) {
       return null

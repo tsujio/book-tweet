@@ -13,7 +13,6 @@ export default class CandidateBook extends React.Component {
   }
 
   render() {
-    const book = this.props.book
     return (
       <div className="candidate-book" onClick={this.handleClick}>
         <BookItem book={this.props.book} />

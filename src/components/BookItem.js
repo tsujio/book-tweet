@@ -3,10 +3,6 @@ import { parseSalesDate } from '../lib/tweet';
 import './BookItem.css';
 
 export default class BookItem extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     if (!this.props.book) {
       return null
@@ -16,7 +12,7 @@ export default class BookItem extends React.Component {
     return (
       <div className="book">
         <div className="book-img-container">
-          <img src={book.mediumImageUrl} />
+          <img src={book.mediumImageUrl} alt={book.title} />
         </div>
         <div>
           <span className="book-title">{book.title}</span>
