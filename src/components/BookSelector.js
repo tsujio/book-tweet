@@ -12,10 +12,10 @@ export default class BookSelector extends React.Component {
     if (this.props.candidateBooks.length <= 0) {
       return null
     }
-    const books = this.props.candidateBooks.items.map((book, i) => {
+    const books = this.props.candidateBooks.Items.map((item, i) => {
       return (
         <ListGroup.Item className="candidate-books-item">
-          <CandidateBook book={book}
+          <CandidateBook book={item.Item}
                          onClick={this.props.onSelect} />
         </ListGroup.Item>
       )

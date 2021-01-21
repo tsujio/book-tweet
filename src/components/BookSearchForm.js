@@ -23,7 +23,7 @@ export default class BookSearchForm extends React.Component {
       return
     }
 
-    fetch('https://www.googleapis.com/books/v1/volumes?q=' +
+    fetch('https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?applicationId=1035158805071077100&title=' +
           encodeURIComponent(this.state.value))
       .then(response => response.json())
       .then(data => this.props.onCandidateBooksUpdate(data))

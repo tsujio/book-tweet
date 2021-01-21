@@ -1,20 +1,10 @@
 import React from 'react';
+import { parseSalesDate } from '../lib/tweet';
 import './BookItem.css';
 
 export default class BookItem extends React.Component {
   constructor(props) {
     super(props)
-  }
-
-  extractISBN(book) {
-    if (!book.volumeInfo.industryIdentifiers) {
-      return ""
-    }
-    return book.volumeInfo.industryIdentifiers
-      .filter(v => v.type.match(/isbn/i))
-      .reduce((v1, v2) => (v1.identifier.length > v2.identifier.length ? v1 : v2),
-              {identifier: ""})
-      .identifier
   }
 
   render() {
@@ -26,15 +16,14 @@ export default class BookItem extends React.Component {
     return (
       <div className="book">
         <div className="book-img-container">
-          <img src={(book.volumeInfo.imageLinks || {}).smallThumbnail} />
+          <img src={book.mediumImageUrl} />
         </div>
         <div>
-          <span className="book-title">{book.volumeInfo.title}</span>
-          <span className="book-authors">{(book.volumeInfo.authors || []).join(', ')}</span>
-          <span className="book-publisher">{book.volumeInfo.publisher}</span>
-          <span className="book-published-date">{book.volumeInfo.publishedDate}</span>
-          <span className="book-isbn">{this.extractISBN(book)}</span>
-
+          <span className="book-title">{book.title}</span>
+          <span className="book-authors">{book.author}</span>
+          <span className="book-publisher">{book.publisherName}</span>
+          <span className="book-published-date">{parseSalesDate(book.salesDate).slice(0, 2).filter(v => v).join('/')}</span>
+          <span className="book-isbn">{book.isbn}</span>
         </div>
       </div>
     )
